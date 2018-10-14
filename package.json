@@ -1,0 +1,49 @@
+{
+  "name": "san-demo",
+  "version": "1.0.0",
+  "description": "一个san js 的demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --hot --inline --config config/webpack.dev.config.js",
+    "start-ie": "node bin/ie-dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vanson",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "console-polyfill": "^0.3.0",
+    "css-loader": "^1.0.0",
+    "del": "^3.0.0",
+    "es3ify-webpack-plugin": "^0.0.1",
+    "es5-shim": "^4.5.12",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "fetch-polyfill2": "^0.0.3",
+    "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "json3": "^3.3.2",
+    "koa": "^2.5.3",
+    "koa-static": "^5.0.0",
+    "koa2-proxy": "^1.1.7",
+    "object-create-ie8": "^1.0.0",
+    "object-defineproperty-ie8": "^1.0.1",
+    "open-browser-webpack-plugin": "^0.0.5",
+    "postcss-loader": "^3.0.0",
+    "san-loader": "^0.0.7",
+    "shelljs": "^0.8.2",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "san": "^3.6.11"
+  }
+}
