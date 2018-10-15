@@ -16,7 +16,7 @@ module.exports = {
     resolve: {
         extensions: ['json', '.js', '.san'],
         alias: {
-            san: 'san/dist/san.dev.js'
+            san: 'san/dist/san.js'
         }
     },
     devtool: 'cheap-module-source-map',

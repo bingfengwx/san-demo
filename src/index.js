@@ -8,21 +8,7 @@ import 'console-polyfill';//IE8下，如果你不打开开发者工具，window�
 import 'json3';  //比IE8的JSON好用
 import 'fetch-polyfill2'; //fetch 实现，司徒正美老师的另一力作
 
-import san from 'san';
+import App from './App';
 
-import Test from './views/Test';
-
-var MyApp = san.defineComponent({
-    template: '<template><san-test></san-test></template>',
-    components: {'san-test': Test},
-
-    initData: function () {
-        return {
-            name: 'San'
-        };
-    }
-});
-
-
-var myApp = new MyApp();
-myApp.attach(document.getElementById('app'));
+var app = new App();
+app.attach(document.getElementById('app'));
