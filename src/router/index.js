@@ -1,7 +1,7 @@
 import {router} from 'san-router';
 
 import Home from '../views/Home';
-import Page1 from '../views/Page1';
+const Page1 = () => import('../views/Page1');  //异步加载组件，适合大型项目，提高首屏加载速度。
 
 router.add({rule: '/', Component: Home, target: 'router-view'}); 
 router.add({rule: '/page1', Component: Page1, target: 'router-view'});
