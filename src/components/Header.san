@@ -1,9 +1,19 @@
 <template>
-    <H1>Hello, {{name}}!</H1>
+    <div>
+        <H1>Hello, {{name}}!</H1>
+        <router-link to="/">Home</router-link>　
+        <router-link to="/page1">Page1</router-link>
+        <hr>
+    </div>
 </template>
 
 <script>
+import {Link} from 'san-router';
+
 export default {
+    components: {
+        'router-link': Link
+    },
     initData() {
         return {
             name: 'World'

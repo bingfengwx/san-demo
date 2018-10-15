@@ -1,20 +1,30 @@
 <template>
     <div>
         <san-header></san-header>
-        <home></home>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
+    import {router} from 'san-router';
+
     import Header from './components/Header';
     import Home from './views/Home';
+    import Page1 from './views/Page1';
 
     export default {
         components: {
-            'san-header': Header,
-            'home': Home
+            'san-header': Header
+        },
+        attached() {
+            router.add({rule: '/', Component: Home, target: 'router-view'}); 
+            router.add({rule: '/page1', Component: Page1, target: 'router-view'});
+
+            // router.setMode('html5');
+            router.start();
         }
     }
+
 </script>
 
 <style>
