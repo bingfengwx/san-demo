@@ -10,13 +10,13 @@
 <script>
 import {Link} from 'san-router';
 import {connect} from 'san-store';
-import * as actions from '../store/userInfo/action-name';
+import * as actionNames from '../store/userInfo/action-name';
 
 const mapState = {
     name: 'userInfo.name',
 }
 const mapAction = {
-    init: actions.INIT,
+    init: actionNames.INIT,
 }
 
 const Header = {
