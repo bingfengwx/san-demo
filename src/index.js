@@ -9,6 +9,8 @@ import 'json3';  //比IE8的JSON好用
 import 'fetch-polyfill2'; //fetch 实现，司徒正美老师的另一力作
 window.Promise = require('bluebird');
 
+import './store';
+
 import App from './App';
 
 var app = new App();
