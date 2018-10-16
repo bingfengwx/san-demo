@@ -1,9 +1,31 @@
 <template>
-    <div>This is page1.</div>
+    <div>
+        <div>This is page1.</div>
+        <br>
+        <label>Hello, </label>
+        <input type="text" value="{{userInfo.name}}" on-change="onChange($event)">
+    </div>
 </template>
 
 <script>
-export default {
-    
+import {connect} from 'san-store';
+import * as actionNames from './../store/userInfo/action-name';
+
+const mapState = {
+    userInfo: 'userInfo'
 }
+
+const mapAction = {
+    setName: actionNames.SET_NAME
+}
+
+const Page1 = {
+    onChange: function(e) {
+        e = e || event;
+        let target = e.target || e.srcElement; // 解决低版本IE兼容性问题
+        this.actions.setName(target.value);
+    }
+}
+
+export default connect.san(mapState, mapAction)(Page1);
 </script>
