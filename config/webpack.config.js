@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const es3ifyPlugin = require('es3ify-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -15,9 +16,6 @@ module.exports = {
     },
     resolve: {
         extensions: ['json', '.js', '.san'],
-        alias: {
-            san: 'san/dist/san.js'
-        }
     },
     devtool: 'cheap-module-source-map',
     module: {
@@ -52,8 +50,10 @@ module.exports = {
             },
         ]
     },
-    mode: 'development',
     plugins: [
+        new CleanWebpackPlugin(['dist'], {
+            root: path.resolve(__dirname, '../')
+        }),
         new es3ifyPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',

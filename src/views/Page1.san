@@ -3,7 +3,7 @@
         <div>This is page1.</div>
         <br>
         <label>Hello, </label>
-        <input type="text" value="{{userInfo.name}}" on-change="onChange($event)">
+        <input type="text" value="{{userInfo.name}}" on-input="onChange($event)" on-propertychange="onChange($event)">
     </div>
 </template>
 
@@ -20,9 +20,12 @@ const mapAction = {
 }
 
 const Page1 = {
+
+    // 为了解决低版本IE input事件的兼容性，必须同时绑定input和propertychange事件
     onChange: function(e) {
+        // 解决低版本IE中e.target兼容性问题
         e = e || event;
-        let target = e.target || e.srcElement; // 解决低版本IE兼容性问题
+        let target = e.target || e.srcElement; 
         this.actions.setName(target.value);
     }
 }

@@ -9,6 +9,12 @@ module.exports = merge(baseConfig, {
         publicPath: '/',
         chunkFilename: 'js/[name].js',
     },
+    resolve: {
+        alias: {
+            san: 'san/dist/san.dev.js'
+        }
+    },
+    mode: 'development',
     devServer: {
         historyApiFallback: true,
         hot: true,

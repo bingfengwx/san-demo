@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --open --hot --inline --config config/webpack.dev.config.js",
     "start-ie": "node bin/ie-dev.js",
+    "build": "webpack --config ./config/webpack.prod.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vanson",
@@ -17,6 +18,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
     "console-polyfill": "^0.3.0",
     "css-loader": "^1.0.0",
     "del": "^3.0.0",

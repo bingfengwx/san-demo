@@ -10,6 +10,12 @@ module.exports = merge(baseConfig, {
         publicPath: '/',
         chunkFilename: 'js/[name].js',
     },
+    resolve: {
+        alias: {
+            san: 'san/dist/san.dev.js'
+        }
+    },
+    mode: 'development',
     plugins: [
         new OpenBrowserPlugin({ url: 'http://localhost:' + config.port })
     ]
